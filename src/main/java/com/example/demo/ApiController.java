@@ -43,8 +43,8 @@ public void deleteTheme(@PathVariable("index") Integer index){
     /* curl -X DELETE http://localhost:8080/themes/delete -H 'Content-Type: text/plain'*/
     @DeleteMapping("themes/delete")
     public void deleteTheme(){
-        for(int i=0;i<themes.size();i++)
-        themes.remove(0);
+        for(int i=themes.size();i>0;i--)
+        themes.remove(i);
     }
     /* curl -X GET http://localhost:8080/themes/1 -H 'Content-Type: text/plain' */
     @GetMapping("themes/{index}")
